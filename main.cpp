@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <windows.h>
 
 void GetSystemInfoFunction() 
@@ -81,14 +81,14 @@ void WriteToMemory()
     std::cout << "Enter integer value: ";
     std::cin >> value;
 
-    // Проверяем информацию о памяти 03AF0000
+    // РџСЂРѕРІРµСЂСЏРµРј РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїР°РјСЏС‚Рё 03AF0000
     MEMORY_BASIC_INFORMATION mbi;
     if (VirtualQuery(address, &mbi, sizeof(mbi)) == 0) {
         std::cerr << "Invalid memory address!\n";
         return;
     }
 
-    // Проверяем, доступна ли память для записи
+    // РџСЂРѕРІРµСЂСЏРµРј, РґРѕСЃС‚СѓРїРЅР° Р»Рё РїР°РјСЏС‚СЊ РґР»СЏ Р·Р°РїРёСЃРё
     if (mbi.Protect & (PAGE_READONLY | PAGE_NOACCESS)) {
         std::cerr << "Memory is not writable!\n";
         return;
