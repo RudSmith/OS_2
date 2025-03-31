@@ -81,7 +81,6 @@ void WriteToMemory()
     std::cout << "Enter integer value: ";
     std::cin >> value;
 
-    // Проверяем информацию о памяти 03AF0000
     MEMORY_BASIC_INFORMATION mbi;
     if (VirtualQuery(address, &mbi, sizeof(mbi)) == 0) {
         std::cerr << "Invalid memory address!\n";
